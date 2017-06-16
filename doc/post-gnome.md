@@ -51,7 +51,7 @@ systemctl start bluetooth
 
 To Do: Full bluetooth control via gnome
 
-### Screen rotation:
+### Screen Rotation:
 #### Install iio-sensor-proxy
 `iio-sensor-proxy` handles accelerometers and light sensors, and is used for screen rotation and automatic brightness control, if the system has the necessary sensors. Our kernel includes a lot of modules for sensors.
 
