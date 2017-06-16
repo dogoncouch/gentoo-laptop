@@ -1,6 +1,6 @@
 
 ## Introduction
-This is a repository of configuration files and resources for installing gento Linux on laptops.
+This is a repository of configuration files and resources for installing Gentoo Linux on laptops.
 
 ### The State of Things
 This is a work in progress. There are still some gaps in between sections. This is meant to be a companion to the [Gentoo Handbook](https://wiki.gentoo.org/wiki/Handbook:Main_Page).
@@ -14,5 +14,5 @@ The kernel is set up for intel core processors; if installing on another process
 This has been tested on at least one 2in1 laptop, and everything works. Laptop hardware support has come a long way since the 1990s, in everything from the kernel to desktop environments.
 
 ### Disk Encryption
-Full disk and swap encryption is a necessity in a lot of industries. This guide uses LUKS on LVM to encrypt everything except the boot partition.
+Full disk and swap encryption are a necessity in a lot of industries. This guide uses LUKS on LVM to encrypt everything except the boot partition.
 
