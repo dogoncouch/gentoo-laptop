@@ -155,6 +155,8 @@ To Do: Full bluetooth control via gnome
 
 ### Screen rotation:
 #### Install iio-sensor-proxy
+`iio-sensor-proxy` handles accelerometers and light sensors, and is used for screen rotation and automatic brightness control, if the system has the necessary sensors. Our kernel includes a lot of modules for sensors.
+
 First, download the [iio-sensor-proxy ebuild](https://bugs.gentoo.org/show_bug.cgi?id=565904). Then put it in the `/usr/portage` tree:
 
     mkdir /usr/portage/sys-apps/iio-sensor-proxy
@@ -189,7 +191,6 @@ In the beginning, it may not work on startup until after a suspend/resume cycle.
 - [Dm-crypt: Gentoo Wiki](https://wiki.gentoo.org/wiki/Dm-crypt_full_disk_encryption)
 
 ### iio-sensor-proxy
-`iio-sensor-proxy` handles accelerometers and light sensors, and is used for screen rotation and automatic brightness control, if the system has the necessary sensors. Our kernel includes a lot of modules for sensors.
 - [iio-sensor-proxy ebuild](https://bugs.gentoo.org/show_bug.cgi?id=565904)
 - [iio-sensor-proxy GitHub](https://github.com/hadess/iio-sensor-proxy)
 
