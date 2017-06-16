@@ -14,6 +14,15 @@ If you plan on using Gnome and systemd, make sure to select the right profile du
 :
     eselect profile set default/linux/amd64/13.0/desktop/gnome/systemd
 
-### Logging
+### Kernel
+If you are using `LVM` and `LuKS`, you will need to use `genkernel-next` instead of `genkernel` to compile a kernel and/or initramfs. To compile a kernel, modules, and an initramfs:
+
+    genkernel --install all
+
+If you want to be able to edit the configuration, use menuconfig:
+
+    genkernel --menuconfig --install all
+
+### Logging/Cron
 We use `syslog-ng` for logging, and `cronie` for cron. If you use something else, and you plan on using our `world` file, make a note that you will need to change it.
 

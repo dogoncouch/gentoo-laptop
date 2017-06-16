@@ -20,7 +20,7 @@ The kernel and initramfs are compiled using genkernel-next. Kernel configuration
 The kernel is set up for intel core processors; if installing on another processor type, change the processor type in menuconfig when compiling a kernel.
 
 ### 2 in 1s
-This has been tested on at least one 2in1 laptop, and everything works. Laptop hardware support has come a long way singe the 1990s, in everything from the kernel to desktop environments.
+This has been tested on at least one 2in1 laptop, and everything works. Laptop hardware support has come a long way since the 1990s, in everything from the kernel to desktop environments.
 
 ### Disk Encryption
 Full disk and swap encryption is a necessity in a lot of industries. This guide uses LUKS on LVM to encrypt everything except the boot partition.
@@ -121,7 +121,16 @@ If you plan on using Gnome and systemd, make sure to select the right profile du
 :
     eselect profile set default/linux/amd64/13.0/desktop/gnome/systemd
 
-### Logging
+### Kernel
+If you are using `LVM` and `LuKS`, you will need to use `genkernel-next` instead of `genkernel` to compile a kernel and/or initramfs. To compile a kernel, modules, and an initramfs:
+
+    genkernel --install all
+
+If you want to be able to edit the configuration, use menuconfig:
+
+    genkernel --menuconfig --install all
+
+### Logging/Cron
 We use `syslog-ng` for logging, and `cronie` for cron. If you use something else, and you plan on using our `world` file, make a note that you will need to change it.
 
 
