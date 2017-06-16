@@ -12,7 +12,7 @@
 This is a repository of configuration files and resources for installing gento Linux on laptops.
 
 ### The State of Things
-This is a work in progress. There are currently a lot of gaps in between sections. This is meant to be a companion to the [Gentoo Handbook](https://wiki.gentoo.org/wiki/Handbook:Main_Page).
+This is a work in progress. There are still some gaps in between sections. This is meant to be a companion to the [Gentoo Handbook](https://wiki.gentoo.org/wiki/Handbook:Main_Page).
 
 ### The Kernel
 The kernel and initramfs are compiled using genkernel-next. Kernel configuration is largely based on the [Kali Linux](https://www.kali.org/) configuration, which has excellent laptop hardware support.
