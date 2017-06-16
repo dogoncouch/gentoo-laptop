@@ -23,7 +23,7 @@ The lines that start with a `<` were in your original world set, and need to be 
 Merge in any other changes you backed up earlier.
 
 ### Networking
-Networking should just work via gnome settings once NetworkManager is enabled. Our `/etc/NetworkManager/conf.d/20-clone.conf` will enable stable mac address cloning (one different address for each network), and keep the vendor ID portion of the mac. NetworkManager has some great features.
+Networking should just work via gnome settings once NetworkManager is enabled (you might have to disable whatever you did to get it working for the Gnome install). Our `/etc/NetworkManager/conf.d/20-clone.conf` will enable stable mac address cloning (one different address for each network), and keep the vendor ID portion of the mac. NetworkManager has some great features.
 
 ```
 systemctl enable --now NetworkManager
