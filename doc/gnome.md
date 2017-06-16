@@ -1,5 +1,6 @@
 
 ## Gnome
+For this phase, do whatever you did to get networking to work on the install medium.
 
 1. Copy files from `desktop-install-phase/etc` into `/etc`:
 ```

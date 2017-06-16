@@ -2,7 +2,7 @@
 ## Introduction
 This is a repository of configuration files and resources for installing gento Linux on laptops.
 
-### State of Things
+### The State of Things
 This is a work in progress. There are currently a lot of gaps in between sections. This is meant to be a companion to the [Gentoo Handbook](https://wiki.gentoo.org/wiki/Handbook:Main_Page).
 
 ### The Kernel
