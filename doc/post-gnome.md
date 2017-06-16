@@ -1,12 +1,40 @@
 
 ## Post-Gnome
 
+### Config Files
+If you want to use our setup, you can copy all of the files in `files/final-phase` to your filesystem. There are a few steps:
+
+1. Create a backup of your `world` set:
+
+    cp /var/lib/portage/world ~/world.bak
+
+Do the same for your genkernel.conf, if you have made any changes to it. Look at all of the files in `files/final-phase/`, and back up any other files you have changed.
+
+2. Copy everything:
+
+    cp -r files/final-phase/* /
+
+3. Add anything from your old `world` set. Use `diff` to see the difference:
+
+    diff ~/world.bak /var/lib/portage/world
+
+The lines that start with a `<` were in your original world set, and need to be added (without the `<` or the space after it) to the new world set.
+
+Merge in any other changes you backed up earlier.
+
 ### Networking
-Should just work via gnome settings once NetworkManager is enabled. Our `/etc/NetworkManager/conf.d/20-clone.conf` will enable stable mac address cloning (one different address for each network), and keep the vendor ID portion of the mac. NetworkManager has some great features.
+Networking should just work via gnome settings once NetworkManager is enabled. Our `/etc/NetworkManager/conf.d/20-clone.conf` will enable stable mac address cloning (one different address for each network), and keep the vendor ID portion of the mac. NetworkManager has some great features.
 
 ```
 systemctl enable --now NetworkManager
 ```
+
+### @world
+If you are using our `USE` settings and/or world config, you should update the world set as soon as you have a network connection:
+
+    emerge --ask --newuse --deep @world
+
+This will probably take a while.
 
 ### Bluetooth:
 Use the [Gentoo Wiki article](https://wiki.gentoo.org/wiki/Bluetooth) to get bluetooth working. Our kernel contains a lot of bluetooth hardware modules, so the kernel configuration should be ok.
