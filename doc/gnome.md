@@ -4,7 +4,7 @@ This should be done once installation is complete, after rebooting into the new 
 
 1. Copy files into `/etc`:
 ```
-cp -r files/desktop-install-phase/etc/* /etc
+cp -ir files/desktop-install-phase/etc/* /etc
 ```
 
 2. Update the `@world` set with new package.use settings:

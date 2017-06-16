@@ -12,7 +12,7 @@ Do the same for your genkernel.conf, if you have made any changes to it. Look at
 
 2. Copy everything:
 
-    cp -r files/final-phase/* /
+    cp -ir files/final-phase/* /
 
 3. Add anything from your old `world` set. Use `diff` to see the difference:
 

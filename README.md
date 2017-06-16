@@ -120,7 +120,7 @@ This repository contains configuration files needed for installation in `files/i
 
 To copy them all:
 
-    cp -r files/install-phase/etc/* /etc
+    cp -ir files/install-phase/etc/* /etc
 
 #### Profile
 We use Gnome for a desktop environment, which requires using the systemd init system. If you don't mind a bit of extra work, you can use something else. That is one of the reasons we like Gentoo.
@@ -149,7 +149,7 @@ This should be done once installation is complete, after rebooting into the new 
 
 1. Copy files into `/etc`:
 ```
-cp -r files/desktop-install-phase/etc/* /etc
+cp -ir files/desktop-install-phase/etc/* /etc
 ```
 
 2. Update the `@world` set with new package.use settings:
@@ -181,7 +181,7 @@ Do the same for your genkernel.conf, if you have made any changes to it. Look at
 
 2. Copy everything:
 
-    cp -r files/final-phase/* /
+    cp -ir files/final-phase/* /
 
 3. Add anything from your old `world` set. Use `diff` to see the difference:
 

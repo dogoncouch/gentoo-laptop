@@ -87,7 +87,7 @@ This repository contains configuration files needed for installation in `files/i
 
 To copy them all:
 
-    cp -r files/install-phase/etc/* /etc
+    cp -ir files/install-phase/etc/* /etc
 
 #### Profile
 We use Gnome for a desktop environment, which requires using the systemd init system. If you don't mind a bit of extra work, you can use something else. That is one of the reasons we like Gentoo.
