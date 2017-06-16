@@ -2,7 +2,7 @@
 
 - [Introduction](#introduction)
 - [LUKS/LVM](#lukslvm)
-- [Configuration](#config)
+- [Configuration](#configuration)
 - [Gnome](#gnome)
 - [Post-Gnome](#post-gnome)
 - [Resources/Thanks](#resourcesthanks)
