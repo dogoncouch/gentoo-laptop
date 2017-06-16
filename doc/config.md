@@ -14,3 +14,6 @@ If you plan on using Gnome and systemd, make sure to select the right profile du
 :
     eselect profile set default/linux/amd64/13.0/desktop/gnome/systemd
 
+### Logging
+We use `syslog-ng` for logging, and `cronie` for cron. If you use something else, and you plan on using our `world` file, make a note that you will need to change it.
+
