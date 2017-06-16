@@ -108,9 +108,9 @@ mount /dev/mapper/MyVG-root /mnt/gentoo
 ## Gnome
 For this phase, do whatever you did to get networking to work on the install medium.
 
-1. Copy files from `desktop-install-phase/etc` into `/etc`:
+1. Copy files into `/etc`:
 ```
-cp -r desktop-install-phase/etc/* /etc
+cp -r files/desktop-install-phase/etc/* /etc
 ```
 
 2. Update the `@world` set with new package.use settings:
@@ -132,7 +132,7 @@ systemctl enable --now gdm
 ## Post-Gnome
 
 ### Networking
-Should just work via gnome settings once NetworkManager is enabled. `/etc/NetworkManager/conf.d/20-clone.conf` will enable stable mac address cloning (one different address for each network), and keep the vendor ID portion of the mac. NetworkManager has some great features.
+Should just work via gnome settings once NetworkManager is enabled. Our `/etc/NetworkManager/conf.d/20-clone.conf` will enable stable mac address cloning (one different address for each network), and keep the vendor ID portion of the mac. NetworkManager has some great features.
 
 ```
 systemctl enable --now NetworkManager

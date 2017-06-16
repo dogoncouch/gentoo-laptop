@@ -2,7 +2,7 @@
 ## Post-Gnome
 
 ### Networking
-Should just work via gnome settings once NetworkManager is enabled. `/etc/NetworkManager/conf.d/20-clone.conf` will enable stable mac address cloning (one different address for each network), and keep the vendor ID portion of the mac. NetworkManager has some great features.
+Should just work via gnome settings once NetworkManager is enabled. Our `/etc/NetworkManager/conf.d/20-clone.conf` will enable stable mac address cloning (one different address for each network), and keep the vendor ID portion of the mac. NetworkManager has some great features.
 
 ```
 systemctl enable --now NetworkManager
