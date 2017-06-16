@@ -32,7 +32,6 @@ This has been tested on at least one 2in1 laptop, and everything works. Laptop h
 Full disk and swap encryption are a necessity in a lot of industries. This guide uses LUKS on LVM to encrypt everything except the boot partition.
 
 
-
 ## Installing Gentoo
 
 ### LUKS/LVM
@@ -113,10 +112,6 @@ mount /dev/mapper/MyVG-home /mnt/gentoo/home
 ```
 mount /dev/mapper/MyVG-root /mnt/gentoo
 ```
-
-#### Links
-- [LuKS/LVM: Arch Linux Wiki](https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system)
-- [Dm-crypt: Gentoo Wiki](https://wiki.gentoo.org/wiki/Dm-crypt_full_disk_encryption)
 
 ### Configuration
 
