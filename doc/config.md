@@ -23,6 +23,8 @@ If you want to be able to edit the configuration, use menuconfig:
 
     genkernel --menuconfig --install all
 
+`genkernel` will use the kernel configuration and `genkernel.conf` in `/etc`.
+
 ### Logging/Cron
 We use `syslog-ng` for logging, and `cronie` for cron. If you use something else, and you plan on using our `world` file, make a note that you will need to change it.
 
