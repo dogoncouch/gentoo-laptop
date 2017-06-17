@@ -152,6 +152,8 @@ This should be done once installation is complete, after rebooting into the new 
 cp -ir gentoo-laptop/files/desktop-install-phase/etc/* /etc
 ```
 
+A few files (`/etc/genkernel.conf`, `/etc/defaults/grub`) will be overwritten with new versions.
+
 2. Update the `@world` set with new package.use settings:
 ```
 emerge --ask --newuse --deep @world
@@ -177,7 +179,7 @@ If you want to use our setup, you can copy all of the files in `gentoo-laptop/fi
 
     cp /var/lib/portage/world ~/world.bak
 
-Do the same for your genkernel.conf, if you have made any changes to it. Look at all of the files in `gentoo-laptop/files/final-phase/`, and back up any other files you have changed.
+Do the same for your `make.conf`, if you have made any changes to it; it will be overwritten. Look at all of the files in `gentoo-laptop/files/final-phase/`, and back up any other files you have changed.
 
 2. Copy everything:
 
@@ -243,6 +245,9 @@ systemctl start iio-sensor-proxy
 ```
 
 In the beginning, it may not work on startup until after a suspend/resume cycle. That issue seems to go away on its own after a few days/weeks.
+
+#### New genkernel.conf
+The desktop-install-phase files contain a different `genkernel.conf` than the install-phase version. The new one will automatically mount `/boot` when it is run, use a splash screen, and automatically reconfigure grub after it is finished.
 
 
 ## Resources/Thanks
