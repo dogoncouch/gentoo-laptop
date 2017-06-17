@@ -15,10 +15,10 @@
 
 
 ## Introduction
-This is a repository of configuration files and resources for installing Gentoo Linux on laptops.
+This is a companion guide to the [Gentoo install documentation](https://wiki.gentoo.org/wiki/Handbook:AMD64#Installing_Gentoo) for laptops, with configuration files. It can be deployed quickly (about a day of compile time on an i3; it is Gentoo), and supports a wide range of laptop hardware.
 
 ### The State of Things
-This is a work in progress. There are still some gaps in between sections. This is meant to be a companion to the [Gentoo Handbook](https://wiki.gentoo.org/wiki/Handbook:Main_Page).
+This is a work in progress. There are still some gaps in between sections.
 
 ### The Kernel
 The kernel and initramfs are compiled using genkernel-next. Kernel configuration is largely based on the [Kali Linux](https://www.kali.org/) configuration, which has excellent laptop hardware support.
