@@ -8,7 +8,7 @@ This section can be used to replace a lot of the instructions in the [Preparing 
 The `/usr` directory can get quite large when compiling a kernel using the included configuration. 20G will not be enough. The filesystem size recommendations that follow were arrived at through extensive testing.
 
 #### Arch Linux Wiki
-Large parts of our dmcrypt and lvm setup were inspired by an [Arch Linux Wiki](https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system) article. The Arch Linux documentation is an invaluable resource to all Linux users, especially gentoo users.
+Large parts of our dmcrypt and lvm setup were inspired by an [Arch Linux Wiki article](https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system). The Arch Linux documentation is an invaluable resource to all Linux users, especially gentoo users.
 
 #### Partitioning
 Create a grub partition and boot partition as normal, and create a third partition that takes up the remainder of the disk. We will encrypt this, and create logical volumes on top of it.
