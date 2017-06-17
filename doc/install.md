@@ -17,8 +17,8 @@ Create a grub partition and boot partition as normal, and create a third partiti
 1. Format the partition with LUKS
 
 ```
-cryptsetup luksFormat /dev/sdxX
-cryptsetup open /dev/sdxX cryptolvm
+cryptsetup luksFormat /dev/sda3
+cryptsetup open /dev/sda3 cryptolvm
 ```
 
 2. Then create a physical volume and a logical volume group:
