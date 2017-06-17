@@ -12,6 +12,7 @@
     - [Bluetooth](#bluetooth)
     - [Screen Rotation](#screen-rotation)
 - [Resources/Thanks](#resourcesthanks)
+- [Contributing](#contributing)
 
 
 ## Introduction
@@ -48,7 +49,6 @@ Create a grub partition and boot partition as normal, and create a third partiti
 
 #### LUKS/LVM setup
 1. Format the partition with LUKS
-
 ```
 cryptsetup luksFormat /dev/sda3
 cryptsetup open /dev/sda3 cryptolvm
@@ -119,36 +119,43 @@ mount /dev/mapper/MyVG-root /mnt/gentoo
 This repository contains configuration files needed for installation in `gentoo-laptop/files/install-phase/`. You can use them as examples, copy them to `/etc`, or ignore them entirely. If you are going to copy them all, a good time to do it is right after [unpacking the stage tarball](https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Stage#Unpacking_the_stage_tarball).
 
 To download this repo, use links:
-
-    links https://github.com/dogoncouch/logdissect/releases/latest
+```
+links https://github.com/dogoncouch/logdissect/releases/latest
+```
 
 Navigate to the link labeled `Source code (tar.gz)`, and hit `d` to download. Then hit `q` to quit, and unpack the tarball:
-
-    tar -xzf v*.tar.gz
+```
+tar -xzf v*.tar.gz
+```
 
 Then remove the version number from the repo directory, so the instructions in the rest of this guide will work:
-
-    mv gentoo-laptop* gentoo-laptop
+```
+mv gentoo-laptop* gentoo-laptop
+```
 
 To copy all configuration files:
-
-    cp -ir gentoo-laptop/files/install-phase/etc/* /etc
+```
+cp -ir gentoo-laptop/files/install-phase/etc/* /etc
+```
 
 #### Profile
 We use Gnome for a desktop environment, which requires using the systemd init system. If you don't mind a bit of extra work, you can use something else. That is one of the reasons we like Gentoo.
 
 If you plan on using Gnome and systemd, make sure to select the right profile during the [Configuring Portage section](https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Base#Choosing_the_right_profile) of installation. For example:
-
-    eselect profile set default/linux/amd64/13.0/desktop/gnome/systemd
+```
+eselect profile set default/linux/amd64/13.0/desktop/gnome/systemd
+```
 
 #### Kernel
 If you are using `LVM` and `LuKS`, you will need to use `genkernel-next` instead of `genkernel` to compile a kernel and/or initramfs. To compile a kernel, modules, and an initramfs:
-
-    genkernel --install all
+```
+genkernel --install all
+```
 
 If you want to be able to edit the configuration, use menuconfig:
-
-    genkernel --menuconfig --install all
+```
+genkernel --menuconfig --install all
+```
 
 `genkernel` will use the kernel configuration and `genkernel.conf` in `/etc`.
 
@@ -188,34 +195,37 @@ systemctl enable --now gdm
 If you want to use our setup, you can copy all of the files in `gentoo-laptop/files/final-phase` to your filesystem. There are a few steps:
 
 1. Create a backup of your `world` set:
-
-    cp /var/lib/portage/world ~/world.bak
+```
+cp /var/lib/portage/world ~/world.bak
+```
 
 Do the same for your `make.conf`, if you have made any changes to it; it will be overwritten. Look at all of the files in `gentoo-laptop/files/final-phase/`, and back up any other files you have changed.
 
 2. Copy everything:
-
-    cp -ir gentoo-laptop/files/final-phase/* /
+```
+cp -ir gentoo-laptop/files/final-phase/* /
+```
 
 3. Add anything from your old `world` set. Use `diff` to see the difference:
-
-    diff ~/world.bak /var/lib/portage/world
+```
+diff ~/world.bak /var/lib/portage/world
+```
 
 The lines that start with a `<` were in your original world set, and need to be added (without the `<` or the space after it) to the new world set.
 
 Merge in any other changes you backed up earlier.
 
 ### Networking
-Networking should just work via gnome settings once NetworkManager is enabled (you might have to disable whatever you did to get it working for the Gnome install). Our `/etc/NetworkManager/conf.d/20-clone.conf` will enable stable mac address cloning (one different address for each network), and keep the vendor ID portion of the mac. NetworkManager has some great features.
-
+Networking should just work via gnome settings once NetworkManager is enabled (you might have to disable whatever you did to get it working for the Gnome install). Our `/etc/NetworkManager/conf.d/20-clone.conf` will enable stable mac address cloning (one different address for each network), and keep the vendor ID portion of the mac. NetworkManager has some great features. To enable and start NetworkManager:
 ```
 systemctl enable --now NetworkManager
 ```
 
 ### @world
 If you are using our `USE` settings and/or world config, you should update the world set as soon as you have a network connection:
-
-    emerge --ask --newuse --deep @world
+```
+emerge --ask --newuse --deep @world
+```
 
 This will probably take a while.
 
@@ -225,7 +235,6 @@ Use the [Gentoo Wiki article](https://wiki.gentoo.org/wiki/Bluetooth) to get blu
 There is an issue with bluetooth and Gnome. Gnome seems to use rfkill to turn off the bluetooth interface, and then for some reason it disappears out of the menu and has to be unblocked manually, or through the settings GUI.
 
 If bluetooth isn't working, make sure it is running/up/unblocked:
-
 ```
 rfkill unblock bluetooth
 hciconfig bluetooth up
@@ -241,17 +250,18 @@ To Do: Full bluetooth control via gnome
 If you are using our all of our config files, and you have updated your `world` set, `iio-sensor-proxy` should already be installed. Check with `emerge -pv iio-sensor-proxy`. If it is, skip ahead to [using iio-sensor-proxy](#using-iio-sensor-proxy)
 
 First, download the [iio-sensor-proxy ebuild](https://bugs.gentoo.org/show_bug.cgi?id=565904). Then put it in the `/usr/portage` tree:
-
-    mkdir /usr/portage/sys-apps/iio-sensor-proxy
-    cp iio-sensor-proxy-2.0.ebuild /usr/portage/sys-apps/iio-sensor-proxy
+```
+mkdir /usr/portage/sys-apps/iio-sensor-proxy
+cp iio-sensor-proxy-2.0.ebuild /usr/portage/sys-apps/iio-sensor-proxy
+```
 
 Then emerge it:
-
-    emerge sys-apps/iio-sensor-proxy
+```
+emerge sys-apps/iio-sensor-proxy
+```
 
 #### Using iio-sensor-proxy
 The iio-sensor-proxy service has to be started at first; after a while it becomes static, and no longer needs to be started.
-
 ```
 systemctl start iio-sensor-proxy
 ```
@@ -278,4 +288,13 @@ The desktop-install-phase files contain a different `genkernel.conf` than the in
 
 ### Bluetooth
 - [Bluetooth: Gentoo Wiki](https://wiki.gentoo.org/wiki/Bluetooth)
+
+
+## Contributing
+
+### Resources
+We do not accept monetary contributions; if you are inclined to donate, we encourage you to donate to the upstream developers at [Gentoo Linux](https://gentoo.org/), or take some classes from [Offensive Security](https://www.offensive-security.com/) (they maintain [Kali Linux](https://www.kali.org/)).
+
+### Experience
+If you have a bug, an anomaly, or a story about anything from odd configurations to setting up complex software on top of our system, we would love to hear about it. We will be setting up a wiki soon; in the meantime, feel free to file an issue on our [GitHub page](https://github.com/dogoncouch/gentoo-laptop), or email the developer at [dpersonsdev@gmail.com](mailto:dpersonsdev@gmail.com).
 
