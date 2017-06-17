@@ -116,11 +116,11 @@ mount /dev/mapper/MyVG-root /mnt/gentoo
 ### Configuration
 
 #### Files
-This repository contains configuration files needed for installation in `files/install-phase/`. You can use them as examples, copy them to `/etc`, or ignore them entirely. If you are going to copy them all, a good time to do it is right after [unpacking the stage tarball](https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Stage#Unpacking_the_stage_tarball).
+This repository contains configuration files needed for installation in `gentoo-laptop/files/install-phase/`. You can use them as examples, copy them to `/etc`, or ignore them entirely. If you are going to copy them all, a good time to do it is right after [unpacking the stage tarball](https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Stage#Unpacking_the_stage_tarball).
 
 To copy them all:
 
-    cp -ir files/install-phase/etc/* /etc
+    cp -ir gentoo-laptop/files/install-phase/etc/* /etc
 
 #### Profile
 We use Gnome for a desktop environment, which requires using the systemd init system. If you don't mind a bit of extra work, you can use something else. That is one of the reasons we like Gentoo.
@@ -149,7 +149,7 @@ This should be done once installation is complete, after rebooting into the new 
 
 1. Copy files into `/etc`:
 ```
-cp -ir files/desktop-install-phase/etc/* /etc
+cp -ir gentoo-laptop/files/desktop-install-phase/etc/* /etc
 ```
 
 2. Update the `@world` set with new package.use settings:
@@ -171,17 +171,17 @@ systemctl enable --now gdm
 ## Post-Gnome
 
 ### Config Files
-If you want to use our setup, you can copy all of the files in `files/final-phase` to your filesystem. There are a few steps:
+If you want to use our setup, you can copy all of the files in `gentoo-laptop/files/final-phase` to your filesystem. There are a few steps:
 
 1. Create a backup of your `world` set:
 
     cp /var/lib/portage/world ~/world.bak
 
-Do the same for your genkernel.conf, if you have made any changes to it. Look at all of the files in `files/final-phase/`, and back up any other files you have changed.
+Do the same for your genkernel.conf, if you have made any changes to it. Look at all of the files in `gentoo-laptop/files/final-phase/`, and back up any other files you have changed.
 
 2. Copy everything:
 
-    cp -ir files/final-phase/* /
+    cp -ir gentoo-laptop/files/final-phase/* /
 
 3. Add anything from your old `world` set. Use `diff` to see the difference:
 

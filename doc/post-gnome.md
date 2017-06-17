@@ -2,17 +2,17 @@
 ## Post-Gnome
 
 ### Config Files
-If you want to use our setup, you can copy all of the files in `files/final-phase` to your filesystem. There are a few steps:
+If you want to use our setup, you can copy all of the files in `gentoo-laptop/files/final-phase` to your filesystem. There are a few steps:
 
 1. Create a backup of your `world` set:
 
     cp /var/lib/portage/world ~/world.bak
 
-Do the same for your genkernel.conf, if you have made any changes to it. Look at all of the files in `files/final-phase/`, and back up any other files you have changed.
+Do the same for your genkernel.conf, if you have made any changes to it. Look at all of the files in `gentoo-laptop/files/final-phase/`, and back up any other files you have changed.
 
 2. Copy everything:
 
-    cp -ir files/final-phase/* /
+    cp -ir gentoo-laptop/files/final-phase/* /
 
 3. Add anything from your old `world` set. Use `diff` to see the difference:
 
