@@ -166,7 +166,7 @@ cp -ir gentoo-laptop/files/desktop-install-phase/etc/* /etc
 
 A few files (`/etc/genkernel.conf`, `/etc/defaults/grub`) will be overwritten with new versions.
 
-2. Update the `@world` set with new package.use settings:
+2. Update the `@world` set with new `USE` flags:
 ```
 emerge --ask --newuse --deep @world
 ```
