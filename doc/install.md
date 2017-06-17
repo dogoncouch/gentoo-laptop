@@ -85,7 +85,19 @@ mount /dev/mapper/MyVG-root /mnt/gentoo
 #### Files
 This repository contains configuration files needed for installation in `gentoo-laptop/files/install-phase/`. You can use them as examples, copy them to `/etc`, or ignore them entirely. If you are going to copy them all, a good time to do it is right after [unpacking the stage tarball](https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Stage#Unpacking_the_stage_tarball).
 
-To copy them all:
+To download this repo, use links:
+
+    links https://github.com/dogoncouch/logdissect/releases/latest
+
+Navigate to the link labeled `Source code (tar.gz)`, and hit `d` to download. Then hit `q` to quit, and unpack the tarball:
+
+    tar -xzf v*.tar.gz
+
+Then remove the version number from the repo directory, so the instructions in the rest of this guide will work:
+
+    mv gentoo-laptop* gentoo-laptop
+
+To copy all configuration files:
 
     cp -ir gentoo-laptop/files/install-phase/etc/* /etc
 
