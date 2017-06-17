@@ -259,7 +259,7 @@ systemctl start iio-sensor-proxy
 In the beginning, it may not work on startup until after a suspend/resume cycle. That issue seems to go away on its own after a few days/weeks.
 
 ### New genkernel.conf
-The desktop-install-phase files contain a different `genkernel.conf` than the install-phase version. The new one will automatically mount `/boot` when it is run, use a splash screen, and automatically reconfigure grub after it is finished.
+The desktop-install-phase files contain a different `genkernel.conf` than the install-phase version. The new one will automatically mount `/boot` when it is run, use a splash screen, and automatically reconfigure grub after it is finished. All of this will be enabled the next time you compile a kernel or initramfs.
 
 
 ## Resources/Thanks
