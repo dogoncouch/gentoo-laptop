@@ -157,7 +157,7 @@ If you are using `LVM` and `LuKS`, you will need to use `genkernel-next` instead
 emerge --ask --verbose @kernel
 ```
 
-To compile a kernel, modules, and an initramfs:
+To compile and install a kernel, modules, and an initramfs:
 ```
 genkernel --install all
 ```
