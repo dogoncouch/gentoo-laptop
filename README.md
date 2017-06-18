@@ -1,4 +1,4 @@
-# Ghost Linux: Gentoo For Laptops
+# Trace Linux: Gentoo For Laptops
 
 - [Introduction](#introduction)
 - [Installing Gentoo](#installing-gentoo)
@@ -17,8 +17,8 @@
 
 ## Introduction
 
-### Ghost Linux
-Ghost Linux is a Linux distribution that only exists as documentation and example configuration files. It is based on [Gentoo Linux](https://gentoo.org), and made for development and network analysis on laptops.
+### Trace Linux
+Trace Linux is a Linux distribution that only exists as documentation and example configuration files. It is based on [Gentoo Linux](https://gentoo.org), and made for development and network analysis on laptops.
 
 ### This Guide
 This is a companion guide to the [Gentoo install documentation](https://wiki.gentoo.org/wiki/Handbook:AMD64#Installing_Gentoo) for laptops, with configuration files. It can be deployed quickly (about a day of compile time on an i3; it is Gentoo), and supports a wide range of laptop hardware.
@@ -228,25 +228,25 @@ emerge --ask --newuse --deep @world
 This might take a while.
 
 ### Sets
-Ghost Linux comes with portage sets for various purposes. Portage sets are groups of packages that can be easily installed together. Available sets are:
+Trace Linux comes with portage sets for various purposes. Portage sets are groups of packages that can be easily installed together. Available sets are:
 
-- ghost-core
+- trace-core
     - Contains core packages
-- ghost-kernel
+- trace-kernel
     - Contains packages related to our kernel
-- ghost-laptop
+- trace-laptop
     - Contains non-model-specific laptop utilities (lm\_sensors, etc.)
-- ghost-gui
+- trace-gui
     - Contains graphical programs (LibreOffice, WireShark, etc.)
-- ghost-wifi
+- trace-wifi
     - Contains wireless networking tools
 
 To emerge a set:
 ```
-emerge --ask --verbose @ghost-core
+emerge --ask --verbose @trace-core
 ```
 
-This will emerge the `ghost-core` set.
+This will emerge the `trace-core` set.
 
 ### Bluetooth:
 Use the [Gentoo Wiki article](https://wiki.gentoo.org/wiki/Bluetooth) to get bluetooth working. Our kernel contains a lot of bluetooth hardware modules, so the kernel configuration should be ok.
@@ -288,7 +288,7 @@ systemctl start iio-sensor-proxy
 In the beginning, it may not work on startup until after a suspend/resume cycle. That issue seems to go away on its own after a few days/weeks.
 
 ### lm\_sensors
-`lm_sensors` is a set of laptop hardware sensor utilities, and part of our `ghost-laptop` set. Once installed, it can be configured using `sensors-detect` (go through the prompts, and pay attention to the warnings), and enabled with `systemctl enable --now lm_sensors`.
+`lm_sensors` is a set of laptop hardware sensor utilities, and part of our `trace-laptop` set. Once installed, it can be configured using `sensors-detect` (go through the prompts, and pay attention to the warnings), and enabled with `systemctl enable --now lm_sensors`.
 
 ### New genkernel.conf
 The desktop-install-phase files contain a different `genkernel.conf` than the install-phase version. The new one will automatically mount `/boot` when it is run, use a splash screen, and automatically reconfigure grub after it is finished. All of this will be enabled the next time you compile a kernel or initramfs.
