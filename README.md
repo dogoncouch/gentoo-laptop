@@ -1,4 +1,4 @@
-# Gentoo For Laptops
+# Ghost Linux: Gentoo For Laptops
 
 - [Introduction](#introduction)
 - [Installing Gentoo](#installing-gentoo)
@@ -16,6 +16,11 @@
 
 
 ## Introduction
+
+### Ghost Linux
+Ghost Linux is a Linux distribution that only exists as documentation and example configuration files. It is based on [Gentoo Linux](https://gentoo.org), and made for development and network analysis on laptops.
+
+### This Guide
 This is a companion guide to the [Gentoo install documentation](https://wiki.gentoo.org/wiki/Handbook:AMD64#Installing_Gentoo) for laptops, with configuration files. It can be deployed quickly (about a day of compile time on an i3; it is Gentoo), and supports a wide range of laptop hardware.
 
 ### The State of Things
@@ -30,7 +35,7 @@ The kernel is set up for intel core processors; if installing on another process
 This has been tested on at least one 2in1 laptop, and everything works. Laptop hardware support has come a long way since the 1990s, in everything from the kernel to desktop environments.
 
 ### Disk Encryption
-Full disk and swap encryption are a necessity in a lot of industries. This guide uses LUKS on LVM to encrypt everything except the boot partition.
+Full disk and swap encryption are a necessity in a lot of industries. We use LUKS on LVM to encrypt everything except the boot partition.
 
 
 ## Installing Gentoo
