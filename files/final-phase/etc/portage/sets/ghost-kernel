@@ -1,0 +1,7 @@
+media-gfx/bootsplash-themes
+media-gfx/splash-themes-gentoo
+media-gfx/splashutils
+sys-boot/grub:2
+sys-kernel/genkernel-next
+sys-kernel/gentoo-sources
+sys-kernel/linux-firmware
