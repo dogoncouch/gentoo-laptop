@@ -194,26 +194,17 @@ systemctl enable --now gdm
 ### Config Files
 If you want to use our setup, you can copy all of the files in `gentoo-laptop/files/final-phase` to your filesystem. There are a few steps:
 
-1. Create a backup of your `world` set:
-```
-cp /var/lib/portage/world ~/world.bak
-```
+1. Create backups:
 
-Do the same for your `make.conf`, if you have made any changes to it; it will be overwritten. Look at all of the files in `gentoo-laptop/files/final-phase/`, and back up any other files you have changed.
+Look at all of the files in `gentoo-laptop/files/final-phase/`, and back up any other files you have changed on your system that might get overwritten. For instance: `/etc/portage/make.conf`, `/etc/fstab`...
 
 2. Copy everything:
 ```
 cp -ir gentoo-laptop/files/final-phase/* /
 ```
 
-3. Add anything from your old `world` set. Use `diff` to see the difference:
-```
-diff ~/world.bak /var/lib/portage/world
-```
-
-The lines that start with a `<` were in your original world set, and need to be added (without the `<` or the space after it) to the new world set.
-
-Merge in any other changes you backed up earlier.
+3. Merge changes:
+Merge in any changes you backed up earlier. You're on your own for this.
 
 ### Networking
 Networking should just work via gnome settings once NetworkManager is enabled (you might have to disable whatever you did to get it working for the Gnome install). Our `/etc/NetworkManager/conf.d/20-clone.conf` will enable stable mac address cloning (one different address for each network), and keep the vendor ID portion of the mac. NetworkManager has some great features. To enable and start NetworkManager:
@@ -222,12 +213,33 @@ systemctl enable --now NetworkManager
 ```
 
 ### @world
-If you are using our `USE` settings and/or world config, you should update the world set as soon as you have a network connection:
+If you are using our `USE` settings, you should update the world set as soon as you have a network connection:
 ```
 emerge --ask --newuse --deep @world
 ```
 
-This will probably take a while.
+This might take a while.
+
+### Sets
+Ghost Linux comes with portage sets for various purposes. Portage sets are groups of packages that can be easily installed together. Available sets are:
+
+- ghost-core
+Contains core packages
+- ghost-kernel
+Contains packages related to our kernel
+- ghost-laptop
+Contains non-model-specific laptop utilities (lm\_sensors, etc.)
+- ghost-gui
+Contains graphical programs (LibreOffice, WireShark, etc.)
+- ghost-wifi
+Contains wireless networking tools
+
+To emerge a set:
+```
+emerge --ask --verbose @ghost-core
+```
+
+This will emerge the `ghost-core` set.
 
 ### Bluetooth:
 Use the [Gentoo Wiki article](https://wiki.gentoo.org/wiki/Bluetooth) to get bluetooth working. Our kernel contains a lot of bluetooth hardware modules, so the kernel configuration should be ok.
