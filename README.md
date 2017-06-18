@@ -152,7 +152,14 @@ eselect profile set default/linux/amd64/13.0/desktop/gnome/systemd
 ```
 
 #### Kernel
-If you are using `LVM` and `LuKS`, you will need to use `genkernel-next` instead of `genkernel` to compile a kernel and/or initramfs. To compile a kernel, modules, and an initramfs:
+If you are using `LVM` and `LuKS`, you will need to use `genkernel-next` instead of `genkernel` to compile a kernel and/or initramfs. To install `genkernel-next`, `grub` (version 2), `gentoo-sources`, and some bootsplash utilities, install our `kernel` set:
+```
+emerge --ask --verbose @kernel
+```
+
+We go into sets in more detail later in this guide.
+
+To compile a kernel, modules, and an initramfs:
 ```
 genkernel --install all
 ```
