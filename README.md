@@ -164,9 +164,6 @@ genkernel --menuconfig --install all
 
 `genkernel` will use the kernel configuration and `genkernel.conf` in `/etc`.
 
-#### Logging/Cron
-We use `syslog-ng` for logging, and `cronie` for cron. If you use something else, and you plan on using our `world` file, make a note that you will need to change it.
-
 
 ## Installing Gnome
 This should be done once installation is complete, after rebooting into the new system. For this phase, do whatever you did to get networking to work on the install medium.
@@ -201,7 +198,7 @@ If you want to use our setup, you can copy all of the files in `gentoo-laptop/fi
 
 1. Create backups:
 
-Look at all of the files in `gentoo-laptop/files/final-phase/`, and back up any other files you have changed on your system that might get overwritten. For instance: `/etc/portage/make.conf`, `/etc/fstab`...
+Look at all of the files in `gentoo-laptop/files/final-phase/etc`, and back up any corrensponding files in your `/etc` directory that you have changed. For instance: `/etc/portage/make.conf`, `/etc/fstab`...
 
 2. Copy everything:
 ```
@@ -229,15 +226,15 @@ This might take a while.
 Ghost Linux comes with portage sets for various purposes. Portage sets are groups of packages that can be easily installed together. Available sets are:
 
 - ghost-core
-Contains core packages
+    - Contains core packages
 - ghost-kernel
-Contains packages related to our kernel
+    - Contains packages related to our kernel
 - ghost-laptop
-Contains non-model-specific laptop utilities (lm\_sensors, etc.)
+    - Contains non-model-specific laptop utilities (lm\_sensors, etc.)
 - ghost-gui
-Contains graphical programs (LibreOffice, WireShark, etc.)
+    - Contains graphical programs (LibreOffice, WireShark, etc.)
 - ghost-wifi
-Contains wireless networking tools
+    - Contains wireless networking tools
 
 To emerge a set:
 ```
