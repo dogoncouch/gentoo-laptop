@@ -1,5 +1,7 @@
 app-admin/sudo
 app-editors/vim
+app-forensics/chkrootkit
+app-forensics/rkhunter
 app-misc/screen
 dev-python/pip
 net-analyzer/iftop
@@ -11,4 +13,5 @@ sys-apps/sandbox
 sys-block/gparted
 sys-apps/mlocate
 sys-process/ftop
+sys-process/lsof
 www-client/links
