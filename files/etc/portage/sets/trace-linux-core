@@ -1,4 +1,5 @@
 app-admin/sudo
+app-backup/rsnapshot
 app-editors/vim
 app-forensics/chkrootkit
 app-forensics/rkhunter
