@@ -232,15 +232,19 @@ This might take a while.
 Trace Linux comes with portage sets for various purposes. Portage sets are groups of packages that can be easily installed together. Available sets are:
 
 - trace-linux-core
-    - Contains core packages
+    - Core packages
 - trace-linux-kernel
-    - Contains packages related to our kernel
+    - Packages related to our kernel
 - trace-linux-laptop
-    - Contains non-model-specific laptop utilities (lm\_sensors, etc.)
+    - Non-model-specific laptop utilities (lm\_sensors, etc.)
+- trace-linux-net
+    - Network analysis tools (non-GUI)
+- trace-linux-disk
+    - Disk forensics utilities (non-GUI)
 - trace-linux-gui
-    - Contains graphical programs (LibreOffice, WireShark, etc.)
+    - Graphical programs (LibreOffice, WireShark, etc.)
 - trace-linux-wifi
-    - Contains wireless networking tools
+    - Wireless network analysis tools (non-GUI)
 
 To emerge a set:
 ```
