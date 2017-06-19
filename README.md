@@ -11,8 +11,6 @@
     - [Configuration](#configuration)
 - [Installing Gnome](#installing-gnome)
 - [Post-Gnome](#post-gnome)
-    - [Config Files](#config-files)
-    - [Networking](#networking)
     - [@world](#world)
     - [Sets](#sets)
     - [Bluetooth](#bluetooth)
@@ -43,7 +41,7 @@ Full disk and swap encryption are a necessity in a lot of industries. We use LUK
 ## Installing Gentoo
 
 ### LUKS/LVM
-This section can be used to replace a lot of the instructions in the [Preparing the disks section](https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Disks) of the gentoo install documentation.  Create a grub
+This section can be used to replace a lot of the instructions in the [Preparing the disks section](https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Disks) of the gentoo install documentation.
 
 #### Important Note
 The `/usr` directory can get quite large when compiling a kernel using the included configuration. 20G will not be enough. The filesystem size recommendations that follow were arrived at through extensive testing.
@@ -123,7 +121,7 @@ mount /dev/mapper/MyVG-root /mnt/gentoo
 ### Configuration
 
 #### Files
-This repository contains configuration files needed for installation in `gentoo-laptop/files/install-phase/`. You can use them as examples, copy them to `/etc`, or ignore them entirely. If you are going to copy them all, a good time to do it is right after [unpacking the stage tarball](https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Stage#Unpacking_the_stage_tarball).
+This repository contains configuration files needed for installation in `gentoo-laptop/files/`. You can use them as examples, copy them to `/etc`, or ignore them entirely. If you are going to copy them all, a good time to do it is right after [unpacking the stage tarball](https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Stage#Unpacking_the_stage_tarball).
 
 To download this repo, use links:
 ```
@@ -142,7 +140,7 @@ mv gentoo-laptop* gentoo-laptop
 
 To copy all configuration files:
 ```
-cp -ir gentoo-laptop/files/install-phase/etc/* /etc
+cp -ir gentoo-laptop/files/* .
 ```
 
 #### Profile
@@ -191,42 +189,27 @@ Once networking is up, install Gnome:
 emergse --ask -v gnome
 ```
 
-2. Enable/start GDM:
+This will take a while.
+
+2. Enable GDM:
 ```
-systemctl enable --now gdm ; exit
+systemctl enable gdm
+```
+
+3. Enable NetworkManager:
+```
+systemctl enable NetworkManager
+```
+
+Our `/etc/NetworkManager/conf.d/20-clone.conf` will enable stable mac address cloning (one different address for each network), and keep the vendor ID portion of the address.
+
+4. Reboot
+```
+reboot
 ```
 
 
 ## Post-Gnome
-
-### Config Files
-If you want to use our setup, you can copy all of the files in `gentoo-laptop/files/final-phase` to your filesystem. There are a few steps:
-
-1. Create backups:
-
-Look at all of the files in `gentoo-laptop/files/final-phase/etc`, and back up any corrensponding files in your `/etc` directory that you have changed. For instance: `/etc/portage/make.conf`, `/etc/fstab`...
-
-2. Copy everything:
-```
-cp -ir gentoo-laptop/files/final-phase/* /
-```
-
-3. Merge changes:
-Merge in any changes you backed up earlier. You're on your own for this.
-
-### Networking
-Networking should just work via gnome settings once NetworkManager is enabled (you might have to disable whatever you did to get it working for the Gnome install). Our `/etc/NetworkManager/conf.d/20-clone.conf` will enable stable mac address cloning (one different address for each network), and keep the vendor ID portion of the mac. NetworkManager has some great features. To enable and start NetworkManager:
-```
-systemctl enable --now NetworkManager
-```
-
-### @world
-If you are using our `USE` settings, you should update the world set as soon as you have a network connection:
-```
-emerge --ask --newuse --deep @world
-```
-
-This might take a while.
 
 ### Sets
 Trace Linux comes with portage sets for various purposes. Portage sets are groups of packages that can be easily installed together. Available sets are:
@@ -322,5 +305,5 @@ In the beginning, it may not work on startup until after a suspend/resume cycle.
 We do not accept monetary contributions; if you are inclined to donate, we encourage you to donate to the upstream developers at [Gentoo Linux](https://gentoo.org/).
 
 ### Experience
-If you have a bug, an anomaly, or a story about anything from odd configurations to setting up complex software on top of our system, we would love to hear about it. We will be setting up a wiki soon; in the meantime, feel free to file an issue on our [GitHub page](https://github.com/dogoncouch/gentoo-laptop), or email the developer at [dpersonsdev@gmail.com](mailto:dpersonsdev@gmail.com).
+If you have a bug, an anomaly, or a story about anything from odd configurations to setting up complex software on top of our system, we would love to hear about it. File an issue on our [GitHub page](https://github.com/dogoncouch/gentoo-laptop), or email the developer at [dpersonsdev@gmail.com](mailto:dpersonsdev@gmail.com).
 
