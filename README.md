@@ -11,7 +11,7 @@
     - [@world](#world)
     - [Sets](#sets)
     - [Bluetooth](#bluetooth)
-    - [Screen Rotation](#screen-rotation)
+    - [Laptop Sensors](#laptop-sensors)
 - [Resources/Thanks](#resourcesthanks)
 - [Contributing](#contributing)
 
@@ -262,8 +262,10 @@ systemctl start bluetooth
 
 To Do: Full bluetooth control via gnome
 
-### Screen Rotation:
-#### Installing iio-sensor-proxy
+### Laptop Sensors
+
+#### Screen Rotation:
+##### Installing iio-sensor-proxy
 `iio-sensor-proxy` handles accelerometers and light sensors, and is used for screen rotation and automatic brightness control, if the system has the necessary sensors. Our kernel includes a lot of modules for sensors.
 
 If you are using our all of our config files, and you have updated your `world` set, `iio-sensor-proxy` should already be installed. Check with `emerge -pv iio-sensor-proxy`. If it is, skip ahead to [using iio-sensor-proxy](#using-iio-sensor-proxy)
@@ -279,7 +281,7 @@ Then emerge it:
 emerge sys-apps/iio-sensor-proxy
 ```
 
-#### Using iio-sensor-proxy
+##### Using iio-sensor-proxy
 The iio-sensor-proxy service has to be started at first; after a while it becomes static, and no longer needs to be started.
 ```
 systemctl start iio-sensor-proxy
@@ -287,7 +289,7 @@ systemctl start iio-sensor-proxy
 
 In the beginning, it may not work on startup until after a suspend/resume cycle. That issue seems to go away on its own after a few days/weeks.
 
-### lm\_sensors
+#### lm\_sensors
 `lm_sensors` is a set of laptop hardware sensor utilities, and part of our `trace-linux-laptop` set. Once installed, it can be configured using `sensors-detect` (go through the prompts, and pay attention to the warnings), and enabled with `systemctl enable --now lm_sensors`.
 
 
