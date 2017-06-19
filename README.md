@@ -1,7 +1,7 @@
 # Trace Linux
 ## (aka Gentoo for Laptops)
 
-![Image of tuxscii](tuxscii.png)
+![tuxscii.png](./tuxscii.png)
 
 ### Version 0.2-alpha
 
