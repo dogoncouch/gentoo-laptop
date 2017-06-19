@@ -155,7 +155,7 @@ eselect profile set default/linux/amd64/13.0/desktop/gnome/systemd
 #### Kernel
 If you are using `LVM` and `LuKS`, you will need to use `genkernel-next` instead of `genkernel` to compile a kernel and/or initramfs. To install `genkernel-next`, `grub` (version 2), `gentoo-sources`, and some bootsplash utilities, install our `kernel` set:
 ```
-emerge --ask --verbose @kernel
+emerge --ask --verbose @trace-linux-kernel
 ```
 
 To compile and install a kernel, modules, and an initramfs:
@@ -221,23 +221,23 @@ This might take a while.
 ### Sets
 Trace Linux comes with portage sets for various purposes. Portage sets are groups of packages that can be easily installed together. Available sets are:
 
-- trace-core
+- trace-linux-core
     - Contains core packages
-- trace-kernel
+- trace-linux-kernel
     - Contains packages related to our kernel
-- trace-laptop
+- trace-linux-laptop
     - Contains non-model-specific laptop utilities (lm\_sensors, etc.)
-- trace-gui
+- trace-linux-gui
     - Contains graphical programs (LibreOffice, WireShark, etc.)
-- trace-wifi
+- trace-linux-wifi
     - Contains wireless networking tools
 
 To emerge a set:
 ```
-emerge --ask --verbose @trace-core
+emerge --ask --verbose @trace-linux-core
 ```
 
-This will emerge the `trace-core` set.
+This will emerge the `trace-linux-core` set.
 
 ### Bluetooth:
 Use the [Gentoo Wiki article](https://wiki.gentoo.org/wiki/Bluetooth) to get bluetooth working. Our kernel contains a lot of bluetooth hardware modules, so the kernel configuration should be ok.
@@ -279,7 +279,7 @@ systemctl start iio-sensor-proxy
 In the beginning, it may not work on startup until after a suspend/resume cycle. That issue seems to go away on its own after a few days/weeks.
 
 ### lm\_sensors
-`lm_sensors` is a set of laptop hardware sensor utilities, and part of our `trace-laptop` set. Once installed, it can be configured using `sensors-detect` (go through the prompts, and pay attention to the warnings), and enabled with `systemctl enable --now lm_sensors`.
+`lm_sensors` is a set of laptop hardware sensor utilities, and part of our `trace-linux-laptop` set. Once installed, it can be configured using `sensors-detect` (go through the prompts, and pay attention to the warnings), and enabled with `systemctl enable --now lm_sensors`.
 
 ### New genkernel.conf
 The desktop-install-phase files contain a different `genkernel.conf` than the install-phase version. The new one will automatically mount `/boot` when it is run, use a splash screen, and automatically reconfigure grub after it is finished. All of this will be enabled the next time you compile a kernel or initramfs.
