@@ -9,6 +9,7 @@
     - [Config Files](#config-files)
     - [Networking](#networking)
     - [@world](#world)
+    - [Sets](#sets)
     - [Bluetooth](#bluetooth)
     - [Screen Rotation](#screen-rotation)
 - [Resources/Thanks](#resourcesthanks)
@@ -29,7 +30,7 @@ This is a work in progress. There are still some gaps in between sections.
 ### The Kernel
 The kernel and initramfs are compiled using genkernel-next. Kernel configuration is largely based on the [Kali Linux](https://www.kali.org/) configuration, which has excellent laptop hardware support.
 
-The kernel is set up for intel core processors; if installing on another processor type, change the processor type in menuconfig when compiling a kernel.
+The kernel is set up for intel core processors; if installing on another processor type, change the processor type in menuconfig when compiling a kernel. It is configured to use `systemd` as an init system.
 
 ### 2 in 1s
 This has been tested on at least one 2in1 laptop, and everything works. Laptop hardware support has come a long way since the 1990s, in everything from the kernel to desktop environments.
@@ -173,24 +174,14 @@ genkernel --menuconfig --install all
 ## Installing Gnome
 This should be done once installation is complete, after rebooting into the new system. For this phase, do whatever you did to get networking to work on the install medium.
 
-1. Copy files into `/etc`:
-```
-cp -ir gentoo-laptop/files/desktop-install-phase/etc/* /etc
-```
+Once networking is up, install Gnome:
 
-A few files (`/etc/genkernel.conf`, `/etc/defaults/grub`) will be overwritten with new versions.
-
-2. Update the `@world` set with new `USE` flags:
-```
-emerge --ask --newuse --deep @world
-```
-
-3. Install gnome:
+1. Install Gnome:
 ```
 emergse --ask -v gnome
 ```
 
-4. Enable/start GDM:
+2. Enable/start GDM:
 ```
 systemctl enable --now gdm
 ```
