@@ -1,5 +1,6 @@
 app-admin/sudo
 app-editors/vim
+app-forensics/sleuthkit
 app-misc/screen
 dev-python/geoip-python
 dev-python/pip
