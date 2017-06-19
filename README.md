@@ -153,9 +153,20 @@ eselect profile set default/linux/amd64/13.0/desktop/gnome/systemd
 ```
 
 #### Kernel
-If you are using `LVM` and `LuKS`, you will need to use `genkernel-next` instead of `genkernel` to compile a kernel and/or initramfs. To install `genkernel-next`, `grub` (version 2), `gentoo-sources`, and some bootsplash utilities, install our `kernel` set:
+If you are using `LVM` and `LuKS`, you will need to use `genkernel-next` instead of `genkernel` to compile a kernel and/or initramfs. This section will replace the [Configuring the Linux Kernel](https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Kernel) section of the Gentoo Handboo.
+
+##### Installing
+
+To install `genkernel-next`, `grub` (version 2), `gentoo-sources`, and some bootsplash utilities, install our `trace-linux-kernel` set:
 ```
 emerge --ask --verbose @trace-linux-kernel
+```
+
+##### Compiling
+
+Our genkernel configuration will automatically configure the Grub bootloader after installing the kernel. Before compiling, install grub on `/dev/sda`:
+```
+grub-install /dev/sda
 ```
 
 To compile and install a kernel, modules, and an initramfs:
@@ -163,12 +174,10 @@ To compile and install a kernel, modules, and an initramfs:
 genkernel --install all
 ```
 
-If you want to be able to edit the configuration, use menuconfig:
+`genkernel` will use the kernel configuration and `genkernel.conf` in `/etc`. If you want to be able to edit the kernel configuration, use menuconfig:
 ```
 genkernel --menuconfig --install all
 ```
-
-`genkernel` will use the kernel configuration and `genkernel.conf` in `/etc`.
 
 
 ## Installing Gnome
