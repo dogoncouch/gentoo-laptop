@@ -22,11 +22,7 @@
 ### Trace Linux
 Trace Linux is a Linux distribution that only exists as documentation and example configuration files. It is based on [Gentoo Linux](https://gentoo.org), and made for development and network analysis on laptops.
 
-### This Guide
-This is a companion guide to the [Gentoo install documentation](https://wiki.gentoo.org/wiki/Handbook:AMD64#Installing_Gentoo) for laptops, with configuration files. It can be deployed quickly (about a day of compile time on an i3; it is Gentoo), and supports a wide range of laptop hardware.
-
-### The State of Things
-This is a work in progress. There are still some gaps in between sections.
+This is a companion guide to the [Gentoo install documentation](https://wiki.gentoo.org/wiki/Handbook:AMD64#Installing_Gentoo). It can be deployed quickly (about a day of compile time on an i3; it is Gentoo), supports a wide range of laptop hardware, and features sets to quickly install groups of software.
 
 ### The Kernel
 The kernel and initramfs are compiled using genkernel-next. Kernel configuration is largely based on the [Kali Linux](https://www.kali.org/) configuration, which has excellent laptop hardware support.
