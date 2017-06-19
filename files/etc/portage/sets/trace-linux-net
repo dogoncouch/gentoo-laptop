@@ -1,6 +1,7 @@
 dev-libs/geoip
 dev-python/geoip-python
 net-analyzer/macchanger
+net-analyzer/nessus
 net-analyzer/nmap
 net-analyzer/traceroute
 net-misc/geoipupdate
