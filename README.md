@@ -189,7 +189,7 @@ emergse --ask -v gnome
 
 2. Enable/start GDM:
 ```
-systemctl enable --now gdm
+systemctl enable --now gdm ; exit
 ```
 
 
