@@ -153,7 +153,7 @@ eselect profile set default/linux/amd64/13.0/desktop/gnome/systemd
 ```
 
 #### Kernel
-If you are using `LVM` and `LuKS`, you will need to use `genkernel-next` instead of `genkernel` to compile a kernel and/or initramfs. This section will replace the [Configuring the Linux Kernel](https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Kernel) section of the Gentoo Handboo.
+If you are using `LVM` and `LuKS`, you will need to use `genkernel-next` instead of `genkernel` to compile a kernel and/or initramfs. This section will replace the [Configuring the Linux Kernel](https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Kernel) section of the Gentoo Handbook.
 
 ##### Installing
 
