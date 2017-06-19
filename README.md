@@ -315,7 +315,7 @@ In the beginning, it may not work on startup until after a suspend/resume cycle.
 ## Contributing
 
 ### Resources
-We do not accept monetary contributions; if you are inclined to donate, we encourage you to donate to the upstream developers at [Gentoo Linux](https://gentoo.org/), or take some classes from [Offensive Security](https://www.offensive-security.com/) (they maintain [Kali Linux](https://www.kali.org/)).
+We do not accept monetary contributions; if you are inclined to donate, we encourage you to donate to the upstream developers at [Gentoo Linux](https://gentoo.org/).
 
 ### Experience
 If you have a bug, an anomaly, or a story about anything from odd configurations to setting up complex software on top of our system, we would love to hear about it. We will be setting up a wiki soon; in the meantime, feel free to file an issue on our [GitHub page](https://github.com/dogoncouch/gentoo-laptop), or email the developer at [dpersonsdev@gmail.com](mailto:dpersonsdev@gmail.com).
