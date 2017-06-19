@@ -1,4 +1,5 @@
-# Trace Linux: Gentoo For Laptops
+# Trace Linux
+## (aka Gentoo for Laptops)
 ### Version 0.2-alpha
 
 - [Introduction](#introduction)
