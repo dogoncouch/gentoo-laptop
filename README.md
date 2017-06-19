@@ -1,4 +1,5 @@
 # Trace Linux: Gentoo For Laptops
+### Version 0.2-alpha
 
 - [Introduction](#introduction)
 - [Installing Gentoo](#installing-gentoo)
