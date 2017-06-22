@@ -7,6 +7,7 @@ app-misc/screen
 dev-python/pip
 net-analyzer/iftop
 net-misc/dhcpcd
+net-misc/proxychains
 net-misc/unison:2.48
 net-wireless/rfkill
 sys-apps/etckeeper
