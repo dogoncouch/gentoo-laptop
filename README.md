@@ -121,7 +121,7 @@ mount /dev/mapper/MyVG-root /mnt/gentoo
 ### Configuration
 
 #### Files
-This repository contains configuration files needed for installation in `gentoo-laptop/files/`. You can use them as examples, copy them to `/etc`, or ignore them entirely. If you are going to copy them all, a good time to do it is right after [unpacking the stage tarball](https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Stage#Unpacking_the_stage_tarball).
+This repository contains configuration files needed for installation in `trace-linux/files/`. You can use them as examples, copy them to `/etc`, or ignore them entirely. If you are going to copy them all, a good time to do it is right after [unpacking the stage tarball](https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Stage#Unpacking_the_stage_tarball).
 
 To download this repo, use links:
 ```
@@ -135,12 +135,12 @@ tar -xzf v*.tar.gz
 
 Then remove the version number from the repo directory, so the instructions in the rest of this guide will work:
 ```
-mv gentoo-laptop* gentoo-laptop
+mv trace-linux* trace-linux
 ```
 
 To copy all configuration files:
 ```
-cp -ir gentoo-laptop/files/* .
+cp -ir trace-linux/files/* .
 ```
 
 #### Profile
@@ -302,5 +302,5 @@ In the beginning, it may not work on startup until after a suspend/resume cycle.
 ## Contributing
 
 ### Experience
-If you have a bug, an anomaly, or a story about anything from odd configurations to setting up complex software on top of our system, we would love to hear about it. File an issue on our [GitHub page](https://github.com/dogoncouch/gentoo-laptop), or email the developer at [dpersonsdev@gmail.com](mailto:dpersonsdev@gmail.com).
+If you have a bug, an anomaly, or a story about anything from odd configurations to setting up complex software on top of our system, we would love to hear about it. File an issue on our [GitHub page](https://github.com/dogoncouch/trace-linux), or email the developer at [dpersonsdev@gmail.com](mailto:dpersonsdev@gmail.com).
 
