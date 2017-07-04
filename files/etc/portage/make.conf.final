@@ -13,6 +13,4 @@ USE="bindist cryptsetup cddb lm_sensors"
 PORTDIR="/usr/portage"
 DISTDIR="${PORTDIR}/distfiles"
 PKGDIR="${PORTDIR}/packages"
-MAKEOPTS="-j3"
-
-GENTOO_MIRRORS="ftp://mirrors.rit.edu/gentoo/ rsync://mirrors.rit.edu/gentoo/ http://mirrors.rit.edu/gentoo/"
+MAKEOPTS="-j2"
