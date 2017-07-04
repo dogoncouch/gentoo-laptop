@@ -151,6 +151,12 @@ If you plan on using Gnome and systemd, make sure to select the right profile du
 eselect profile set default/linux/amd64/13.0/desktop/gnome/systemd
 ```
 
+#### USE variable
+Our initial make.conf leaves out some USE flags to avoid circular dependencies during the initial system install. After updating your @world set, switch to the final make.conf:
+```
+mv /etc/portage/make.conf.final /etc/portage/make.conf
+```
+
 #### Kernel
 If you are using `LVM` and `LuKS`, you will need to use `genkernel-next` instead of `genkernel` to compile a kernel and/or initramfs. This section will replace the [Configuring the Linux Kernel](https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Kernel) section of the Gentoo Handbook.
 
