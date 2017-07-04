@@ -125,7 +125,7 @@ This repository contains configuration files needed for installation in `gentoo-
 
 To download this repo, use links:
 ```
-links https://github.com/dogoncouch/logdissect/releases/latest
+links https://github.com/dogoncouch/trace-linux/releases/latest
 ```
 
 Navigate to the link labeled `Source code (tar.gz)`, and hit `d` to download. Then hit `q` to quit, and unpack the tarball:
