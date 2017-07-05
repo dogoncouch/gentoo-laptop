@@ -14,7 +14,7 @@
 - Gentoo stage tarball: stage3-amd64-minimal-20170629.tar.bz2
 
 ### Host Specs
-
+- Processor: Intel core i5
 - RAM: 16G
 - Storage: SSD
 - Network: Wifi
@@ -41,11 +41,7 @@
 - `@trace-linux-disk`: 5 minutes
 - `@trace-linux-gui`: 5h 20m
 
-
-- End time: 
-
 ### Choices:
-#### Offer option to pause for locale config (split make into phases)
 - Drive
 - Drive size: use blockdev --getsize64 /dev/DRIVE
     - Alternate `fstab` for <240G drives
@@ -55,6 +51,7 @@
 - Locales
     - `/etc/locale.gen`
     - Default to US ISO and UTF
+    - Include config file in files
 - Hostname (Configuring the system)
     - /etc/conf.d/hostname
     - Don't bother during scripted install, will be forgotten
@@ -78,4 +75,5 @@
     - Reove blender, virtualbox, openoffice
         - Form other sets
     - Rename to `@trace-linux-netgui`
+- Set default Gnome extensions with eselect during install
 
