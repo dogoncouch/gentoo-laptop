@@ -29,11 +29,14 @@
 - Network: redundant (NAT/bridged adapter)
 
 ### Times
+- Start time: 2017-07-04 16:00
 - First `@world` update: 3 hours
 - Second `@world` update: 30 minutes
 - `@trace-linux-kernel` emerge: 10 minutes
 - `genkernel --install all`: < 3 hours
 - Gnome: start time: started 07/05 00:12 EDT
+
+- End time: 
 
 ### Choices:
 #### Offer option to pause for locale config (split make into phases)
@@ -56,7 +59,8 @@
 
 ### Notes
 - `/etc/defaults/grub` was overwritten during grub install
-    - Caused lots of trouble
+    - `grub-install` and `grub-mkconfig` had to be re-run
+    - Wrong `/usr` in `fstab` might have contributed
 - `timedatectl set-time "YYYY-mm-dd HH:MM:SS"` needed after reboot
     - Was way off: 8 hours 30 minutes fast
 - Hostname needs to be reset after first reboot into systemd
