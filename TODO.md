@@ -1,8 +1,11 @@
 # To Do
 
+## Change
+- Switch from BIOS to EFI
+
 ## Add
-- Instructions for updating @world after switch to make.conf.final
-- Optimizing section
+- Test install script
+- Optimizing instructions
     - `MAKEOPTS`
     - `CFLAGS` (`-pipe`, `-march=native`)
     - `USE` (`mmx`, `sse`, `sse2`
@@ -12,3 +15,4 @@
     - Uncomment `/etc/portage/bashrc`
     - `etckeeper init`, `git config`
 - Sets for more complex network testing, forensics software
+

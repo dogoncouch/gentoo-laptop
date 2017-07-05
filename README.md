@@ -152,9 +152,10 @@ eselect profile set default/linux/amd64/13.0/desktop/gnome/systemd
 ```
 
 #### USE variable
-Our initial make.conf leaves out some USE flags to avoid circular dependencies during the initial system install. After updating your @world set, switch to the final make.conf:
+Our initial make.conf leaves out some USE flags to avoid circular dependencies during the initial system install. After updating your @world set, switch to the final make.conf and re-do the update:
 ```
 mv /etc/portage/make.conf.final /etc/portage/make.conf
+emerge --ask --deep --newuse @world
 ```
 
 #### Kernel
