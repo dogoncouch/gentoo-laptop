@@ -39,7 +39,7 @@
 - `@trace-linux-core`: 25 minutes
 - `@trace-linux-net`: 5 minutes
 - `@trace-linux-disk`: 5 minutes
-- `@trace-linux-gui`: 11:32 start
+- `@trace-linux-gui`: 5h 20m
 
 
 - End time: 
@@ -70,4 +70,12 @@
 - `timedatectl set-time "YYYY-mm-dd HH:MM:SS"` needed after reboot
     - Was way off: 8 hours 30 minutes fast
 - Hostname needs to be reset after first reboot into systemd
+- Use seperate drives for tmp stuff next time
+    - `/usr/src`
+    - `/var/tmp`
+    - `/usr/portage/distfiles`
+- Split up `@trace-linux-gui` set
+    - Reove blender, virtualbox, openoffice
+        - Form other sets
+    - Rename to `@trace-linux-netgui`
 
