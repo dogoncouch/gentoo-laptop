@@ -1,5 +1,6 @@
 dev-libs/geoip
 dev-python/geoip-python
+net-analyzer/hydra
 net-analyzer/macchanger
 net-analyzer/nessus
 net-analyzer/nmap

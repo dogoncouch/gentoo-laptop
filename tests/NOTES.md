@@ -34,7 +34,13 @@
 - Second `@world` update: 30 minutes
 - `@trace-linux-kernel` emerge: 10 minutes
 - `genkernel --install all`: < 3 hours
-- Gnome: start time: started 07/05 00:12 EDT
+- Gnome: 6.5 hours
+- Total (up to Gnome): ~12.5 hours
+- `@trace-linux-core`: 25 minutes
+- `@trace-linux-net`: 5 minutes
+- `@trace-linux-disk`: 5 minutes
+- `@trace-linux-gui`: 11:32 start
+
 
 - End time: 
 
