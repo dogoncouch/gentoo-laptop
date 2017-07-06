@@ -168,6 +168,11 @@ To install `genkernel-next`, `grub` (version 2), `gentoo-sources`, and some boot
 emerge --ask --verbose @trace-linux-kernel
 ```
 
+We have noticed `/etc/defaults/grub` being overwritten when grub is installed, so copy it again just to be sure:
+```
+cp trace-linux/files/etc/defaults/grub /etc/defaults
+```
+
 ##### Compiling
 
 Our genkernel configuration will automatically configure the Grub bootloader after installing the kernel. Before compiling, install grub on `/dev/sda`:
@@ -193,7 +198,7 @@ Once networking is up, install Gnome:
 
 1. Install Gnome:
 ```
-emergse --ask -v gnome
+emergse --ask --verbose gnome
 ```
 
 This will take a while.
@@ -242,7 +247,7 @@ Trace Linux comes with portage sets for various purposes. Portage sets are group
 
 To emerge a set:
 ```
-emerge --ask --verbose @trace-linux-core
+emerge -av @trace-linux-core
 ```
 
 This will emerge the `trace-linux-core` set.
