@@ -3,7 +3,7 @@
 
 ![tuxscii.png](./tuxscii.png)
 
-### Version 0.2-alpha
+### Version 0.4-beta
 
 - [Introduction](#introduction)
 - [Installing Gentoo](#installing-gentoo)
