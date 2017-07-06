@@ -168,11 +168,6 @@ To install `genkernel-next`, `grub` (version 2), `gentoo-sources`, and some boot
 emerge --ask --verbose @trace-linux-kernel
 ```
 
-We have noticed `/etc/defaults/grub` being overwritten when grub is installed, so copy it again just to be sure:
-```
-cp trace-linux/files/etc/defaults/grub /etc/defaults
-```
-
 ##### Compiling
 
 Our genkernel configuration will automatically configure the Grub bootloader after installing the kernel. Before compiling, install grub on `/dev/sda`:
