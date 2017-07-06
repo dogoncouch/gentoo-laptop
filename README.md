@@ -231,10 +231,14 @@ Trace Linux comes with portage sets for various purposes. Portage sets are group
     - Network analysis tools (non-GUI)
 - trace-linux-disk
     - Disk forensics utilities (non-GUI)
-- trace-linux-gui
-    - Graphical programs (LibreOffice, WireShark, etc.)
 - trace-linux-wifi
     - Wireless network analysis tools (non-GUI)
+- trace-linux-guisec
+    - Graphical forensics and network analysis programs
+- trace-linux-office
+    - Graphical programs for office productivity
+- trace-linux-gfx
+    - Graphical programs for multi-media
 
 To emerge a set:
 ```

@@ -67,12 +67,12 @@
 - `timedatectl set-time "YYYY-mm-dd HH:MM:SS"` needed after reboot
     - Was way off: 8 hours 30 minutes fast
 - Hostname needs to be reset after first reboot into systemd
-- Use seperate drives for tmp stuff next time
+- Use seperate drives for tmp stuff to create VM
     - `/usr/src`
     - `/var/tmp`
     - `/usr/portage/distfiles`
 - Split up `@trace-linux-gui` set
-    - Reove blender, virtualbox, openoffice
+    - Move blender, virtualbox, openoffice
         - Form other sets
     - Rename to `@trace-linux-netgui`
 - Set default Gnome extensions with eselect during install
