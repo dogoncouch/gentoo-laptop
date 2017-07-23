@@ -1,5 +1,4 @@
-# Trace Linux
-## (aka Gentoo for Laptops)
+# Gentoo for Laptops
 
 ![tuxscii.png](./tuxscii.png)
 
@@ -21,10 +20,12 @@
 
 ## Introduction
 
-### Trace Linux
-Trace Linux is a Linux distribution that only exists as documentation and example configuration files. It is based on [Gentoo Linux](https://gentoo.org), and made for development and network analysis, primarily on laptops.
+### This Repository
+This repository contains documentation and configuration resources for installing [Gentoo Linux](https://gentoo.org) on laptops. It is currently geared toward network testing.
 
-This is a companion guide to the [Gentoo install documentation](https://wiki.gentoo.org/wiki/Handbook:AMD64#Installing_Gentoo). It can be deployed quickly (about a day of compile time on an i3; it is Gentoo), supports a wide range of laptop hardware, and features sets to quickly install groups of software.
+This file (README.md) is a companion guide to the [Gentoo install documentation](https://wiki.gentoo.org/wiki/Handbook:AMD64#Installing_Gentoo). It can be deployed quickly (about a day of compile time on an i3; it is Gentoo), supports a wide range of laptop hardware, and features sets to quickly install groups of software.
+
+If you are installing using our configuration files, make sure that this file (README.md) and the configuration files are the same version.
 
 ### The Kernel
 The kernel and initramfs are compiled using genkernel-next. Kernel configuration is largely based on the [Kali Linux](https://www.kali.org/) configuration, which has excellent laptop hardware support.
@@ -121,11 +122,11 @@ mount /dev/mapper/MyVG-root /mnt/gentoo
 ### Configuration
 
 #### Files
-This repository contains configuration files needed for installation in `trace-linux/files/`. You can use them as examples, copy them to `/etc`, or ignore them entirely. If you are going to copy them all, a good time to do it is right after [unpacking the stage tarball](https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Stage#Unpacking_the_stage_tarball).
+This repository contains configuration files needed for installation in `gentoo-laptop/files/`. You can use them as examples, copy them to `/etc`, or ignore them entirely. If you are going to copy them all, a good time to do it is right after [unpacking the stage tarball](https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Stage#Unpacking_the_stage_tarball).
 
 To download this repo, use links:
 ```
-links https://github.com/dogoncouch/trace-linux/releases/latest
+links https://github.com/dogoncouch/gentoo-laptop/releases/latest
 ```
 
 Navigate to the link labeled `Source code (tar.gz)`, and hit `d` to download. Then hit `q` to quit, and unpack the tarball:
@@ -135,12 +136,12 @@ tar -xzf v*.tar.gz
 
 Then remove the version number from the repo directory, so the instructions in the rest of this guide will work:
 ```
-mv trace-linux* trace-linux
+mv gentoo-laptop* gentoo-laptop
 ```
 
 To copy all configuration files:
 ```
-cp -ir trace-linux/files/* .
+cp -ir gentoo-laptop/files/* .
 ```
 
 #### Profile
@@ -219,7 +220,7 @@ reboot
 ## Post-Gnome
 
 ### Sets
-Trace Linux comes with portage sets for various purposes. Portage sets are groups of packages that can be easily installed together. Available sets are:
+The incuded configuration files come with portage sets for various purposes. Portage sets are groups of packages that can be easily installed together. Available sets are:
 
 - trace-linux-core
     - Core packages
@@ -313,5 +314,5 @@ In the beginning, it may not work on startup until after a suspend/resume cycle.
 ## Contributing
 
 ### Experience
-If you have a bug, an anomaly, or a story about anything from odd configurations to setting up complex software on top of our system, we would love to hear about it. File an issue on our [GitHub page](https://github.com/dogoncouch/trace-linux), or email the developer at [dpersonsdev@gmail.com](mailto:dpersonsdev@gmail.com).
+If you have a bug, an anomaly, or a story about anything from odd configurations to setting up complex software on top of our system, we would love to hear about it. File an issue on our [GitHub page](https://github.com/dogoncouch/gentoo-laptop), or email the developer at [dpersonsdev@gmail.com](mailto:dpersonsdev@gmail.com).
 
