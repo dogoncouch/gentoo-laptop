@@ -21,7 +21,7 @@
 ## Introduction
 
 ### This Repository
-This repository contains documentation and configuration resources for installing [Gentoo Linux](https://gentoo.org) on laptops. It is currently geared toward network testing.
+This repository contains documentation and configuration resources for installing [Gentoo Linux](https://gentoo.org) on laptops. It is currently geared toward network testing, with plans to use more generic package keywords in the future to. The goal is to have something that is useful for KVM virtualization, network testing, and development.
 
 This file (README.md) is a companion guide to the [Gentoo install documentation](https://wiki.gentoo.org/wiki/Handbook:AMD64#Installing_Gentoo). It can be deployed quickly (about a day of compile time on an i3; it is Gentoo), supports a wide range of laptop hardware, and features sets to quickly install groups of software.
 
