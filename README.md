@@ -28,9 +28,9 @@ This file (README.md) is a companion guide to the [Gentoo install documentation]
 If you are installing using our configuration files, make sure that this file (README.md) and the configuration files are the same version.
 
 ### The Kernel
-The kernel and initramfs are compiled using genkernel-next. Kernel configuration is largely based on the [Kali Linux](https://www.kali.org/) configuration, which has excellent laptop hardware support.
+The kernel and initramfs are compiled using genkernel-next. Kernel configuration is largely based on the [Kali Linux](https://www.kali.org/) configuration, which has excellent laptop hardware support. It is configured to use `systemd` as an init system.
 
-The kernel is configured to use `systemd` as an init system.
+Our kernel modules are quite expansive. You can expect a ~12G source tree, with ~2.8G worth of compiled modules in `/lib/modules/`.
 
 ### 2 in 1s
 This has been tested on at least one 2in1 laptop, and everything works. Laptop hardware support has come a long way since the 1990s, in everything from the kernel to desktop environments.
