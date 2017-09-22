@@ -26,7 +26,7 @@ GRUB_DISTRIBUTOR="Gentoo"
 # GRUB_CMDLINE_LINUX="net.ifnames=0"
 #
 # Boot with systemd instead of sysvinit (openrc)
-GRUB_CMDLINE_LINUX="quiet dolvm crypt_root=/dev/sda3 real_root=/dev/mapper/MyVG-root rootfstype=ext4 init=/usr/lib/systemd/systemd splash=silent,fadein,theme:emergence console=tty1"
+GRUB_CMDLINE_LINUX="dolvm crypt_root=/dev/sda3 real_root=/dev/mapper/MyVG-root rootfstype=ext4 init=/usr/lib/systemd/systemd vga=791 splash=silent,fadein,theme:emergence console=tty1 quiet swapaccount=1"
 
 # Append parameters to the linux kernel command line for non-recovery entries
 #GRUB_CMDLINE_LINUX_DEFAULT=""
