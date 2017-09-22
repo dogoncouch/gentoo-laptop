@@ -26,7 +26,10 @@ GRUB_DISTRIBUTOR="Gentoo"
 # GRUB_CMDLINE_LINUX="net.ifnames=0"
 #
 # Boot with systemd instead of sysvinit (openrc)
-GRUB_CMDLINE_LINUX="dolvm crypt_root=/dev/sda3 real_root=/dev/mapper/MyVG-root rootfstype=ext4 init=/usr/lib/systemd/systemd vga=791 splash=silent,fadein,theme:emergence console=tty1 quiet swapaccount=1"
+# Add the following for docker support (requires sys-kernel/aufs-sources):
+#   systemd.legacy_systemd_cgroup_controller=yes swapaccount=1
+# (note: Memory Resource Controller Swap Extension causes more memory use)
+GRUB_CMDLINE_LINUX="dolvm crypt_root=/dev/sda3 real_root=/dev/mapper/MyVG-root rootfstype=ext4 init=/usr/lib/systemd/systemd vga=791 splash=silent,fadein,theme:emergence console=tty1 quiet "
 
 # Append parameters to the linux kernel command line for non-recovery entries
 #GRUB_CMDLINE_LINUX_DEFAULT=""
