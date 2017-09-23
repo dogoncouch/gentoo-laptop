@@ -30,7 +30,7 @@ If you are installing using our configuration files, make sure that this file (R
 ### The Kernel
 The kernel and initramfs are compiled using genkernel-next. Kernel configuration is largely based on the [Kali Linux](https://www.kali.org/) configuration, which has excellent laptop hardware support. It is configured to use `systemd` as an init system, for compatibility with the Gnome desktop environment.
 
-It supports Docker containers. It also has guest support for most virtualization hosts.
+It supports Docker containers (with the devicemapper storage driver), QEMU/KVM, VirtualBox (currently broken), and has guest support for most virtualization hosts.
 
 Our kernel modules are quite expansive. You can expect a ~12G source tree, with ~2.8G worth of compiled modules in `/lib/modules/`.
 
@@ -72,8 +72,8 @@ vgcreate MyVG /dev/mapper/cryptolvm
 ```
 lvcreate -L 8G MyVG -n swap
 lvcreate -L 20G MyVG -n root
-lvcreate -L 60G MyVG -n usr
-lvcreate -L 40G MyVG -n var
+lvcreate -L 40G MyVG -n usr
+lvcreate -L 20G MyVG -n var
 lvcreate -l 100%FREE MyVG -n home
 ```
 
