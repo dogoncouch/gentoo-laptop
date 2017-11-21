@@ -166,9 +166,9 @@ If you are using `LVM` and `LuKS`, you will need to use `genkernel-next` instead
 
 ##### Installing
 
-To install `genkernel-next`, `grub` (version 2), `gentoo-sources`, and some bootsplash utilities, install our `trace-linux-kernel` set:
+To install `genkernel-next`, `grub` (version 2), `gentoo-sources`, and some bootsplash utilities, install our `dogoncouch-kernel` set:
 ```
-emerge --ask --verbose @trace-linux-kernel
+emerge --ask --verbose @dogoncouch-kernel
 ```
 
 ##### Compiling
@@ -224,31 +224,31 @@ reboot
 ### Sets
 The incuded configuration files come with portage sets for various purposes. Portage sets are groups of packages that can be easily installed together. Available sets are:
 
-- trace-linux-core
+- dogoncouch-core
     - Core packages
-- trace-linux-kernel
+- dogoncouch-kernel
     - Packages related to our kernel
-- trace-linux-laptop
+- dogoncouch-laptop
     - Non-model-specific laptop utilities (lm\_sensors, etc.)
-- trace-linux-net
+- dogoncouch-net
     - Network analysis tools (non-GUI)
-- trace-linux-disk
+- dogoncouch-disk
     - Disk forensics utilities (non-GUI)
-- trace-linux-wifi
+- dogoncouch-wifi
     - Wireless network analysis tools (non-GUI)
-- trace-linux-guisec
+- dogoncouch-guisec
     - Graphical forensics and network analysis programs
-- trace-linux-office
+- dogoncouch-office
     - Graphical programs for office productivity
-- trace-linux-gfx
+- dogoncouch-gfx
     - Graphical programs for multi-media
 
 To emerge a set:
 ```
-emerge -av @trace-linux-core
+emerge -av @dogoncouch-core
 ```
 
-This will emerge the `trace-linux-core` set.
+This will emerge the `dogoncouch-core` set.
 
 ### Bluetooth:
 Use the [Gentoo Wiki article](https://wiki.gentoo.org/wiki/Bluetooth) to get bluetooth working. Our kernel contains a lot of bluetooth hardware modules, so the kernel configuration should be ok.
@@ -270,7 +270,7 @@ To Do: Full bluetooth control via gnome
 ##### Installing iio-sensor-proxy
 `iio-sensor-proxy` handles accelerometers and light sensors, and is used for screen rotation and automatic brightness control, if the system has the necessary sensors. Our kernel includes a lot of modules for sensors.
 
-If you are using our all of our config files, and you have installed our `trace-linux-laptop` set, `iio-sensor-proxy` should already be installed. Check with `emerge -pv iio-sensor-proxy`. If it is, skip ahead to [using iio-sensor-proxy](#using-iio-sensor-proxy)
+If you are using our all of our config files, and you have installed our `dogoncouch-laptop` set, `iio-sensor-proxy` should already be installed. Check with `emerge -pv iio-sensor-proxy`. If it is, skip ahead to [using iio-sensor-proxy](#using-iio-sensor-proxy)
 
 First, download the [iio-sensor-proxy ebuild](https://bugs.gentoo.org/show_bug.cgi?id=565904). Then put it in the `/usr/portage` tree:
 ```
@@ -292,7 +292,7 @@ systemctl start iio-sensor-proxy
 In the beginning, it may not work on startup until after a suspend/resume cycle. That issue seems to go away on its own after a few days/weeks.
 
 #### lm\_sensors
-`lm_sensors` is a set of laptop hardware sensor utilities, and part of our `trace-linux-laptop` set. Once installed, it can be configured using `sensors-detect` (go through the prompts, and pay attention to the warnings), and enabled with `systemctl enable --now lm_sensors`.
+`lm_sensors` is a set of laptop hardware sensor utilities, and part of our `dogoncouch-laptop` set. Once installed, it can be configured using `sensors-detect` (go through the prompts, and pay attention to the warnings), and enabled with `systemctl enable --now lm_sensors`.
 
 
 ## Resources/Thanks
