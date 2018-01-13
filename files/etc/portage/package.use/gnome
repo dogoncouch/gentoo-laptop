@@ -1,0 +1,30 @@
+net-misc/unison -gtk
+# required by gnome-base/gnome-control-center-3.22.2-r1::gentoo[cups]
+# required by net-libs/gnome-online-accounts-3.22.7::gentoo[gnome]
+# required by gnome-extra/gnome-contacts-3.22.1-r1::gentoo
+# required by gnome-base/gnome-core-apps-3.22.2::gentoo
+# required by gnome-base/gnome-3.22.2::gentoo
+# required by gnome (argument)
+>=net-fs/samba-4.5.10-r1 client
+# required by sys-libs/ldb-1.1.29-r1::gentoo
+# required by net-fs/samba-4.5.10-r1::gentoo
+# required by net-fs/cifs-utils-6.4::gentoo[acl]
+>=sys-libs/tevent-0.9.31-r1 python
+# required by dev-python/cryptography-2.0.2-r1::gentoo[-libressl]
+# required by dev-python/pyopenssl-17.2.0::gentoo
+# required by dev-python/urllib3-1.22::gentoo
+# required by dev-python/requests-2.18.2-r1::gentoo
+# required by media-sound/gnome-music-3.22.2-r1::gentoo
+# required by gnome-base/gnome-extra-apps-3.22.2::gentoo[tracker]
+# required by gnome-base/gnome-3.22.2::gentoo[extras]
+# required by gnome (argument)
+>=dev-libs/openssl-1.0.2n -bindist
+# required by media-gfx/gnome-photos-3.22.6::gentoo
+# required by gnome-base/gnome-extra-apps-3.22.2::gentoo[tracker]
+# required by gnome-base/gnome-3.22.2::gentoo[extras]
+# required by gnome (argument)
+>=media-libs/gegl-0.3.8 raw jpeg2k
+# required by sys-libs/ldb-1.1.29-r1::gentoo
+# required by net-fs/samba-4.5.10-r1::gentoo
+# required by net-fs/cifs-utils-6.4::gentoo[acl]
+>=sys-libs/tdb-1.3.13 python

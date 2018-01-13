@@ -1,0 +1,4 @@
+net-misc/unison -gtk
+# required by app-office/libreoffice-5.4.2.2::gentoo
+# required by libreoffice (argument)
+>=dev-libs/xmlsec-1.2.24-r1 nss
