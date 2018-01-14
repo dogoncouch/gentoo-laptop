@@ -2,11 +2,13 @@
 Change log for [trace-linux](https://github.com/dogoncouch/trace-linux)
 
 ## [unreleased]
-### Added
-- Docker host support
+### Changed
+- Boot splash temporarily disabled
+- Simplified package.use
 
 ### Updated
-- Kernel version: 4.12.12
+- Kernel version: 4.9.72
+    - Meltdown/Spectre security fixes
 
 ## [0.3-alpha] 2017-07-03
 ### Added
