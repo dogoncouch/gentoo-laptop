@@ -1,7 +1,7 @@
 # Change log
 Change log for [trace-linux](https://github.com/dogoncouch/trace-linux)
 
-## [unreleased]
+## [0.5-beta] 2018-01-14
 ### Changed
 - Boot splash temporarily disabled
 - Simplified package.use
